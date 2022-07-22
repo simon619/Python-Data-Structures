@@ -38,7 +38,7 @@ class Priority_Queue:
                     break
 
             self.que[delete], self.que[len(self.que) - 1] = self.que[len(self.que) - 1], self.que[delete]
-            self.que.remove(len(self.que) - 1)
+            del self.que[-1]
             for i in range(len(self.que) // 2 - 1, -1, -1):
                 self.__heapify__(self.que, len(self.que), i)
 
